@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+  width: 100%;
+}
+/*mise en page top*/
+.menuTop{
+  font-family: 'Lobster', sans-serif;
+  font-size: 30px;
+  width: 100%;
+  height: 150px;
+  background-color:  #415455;
+  border-bottom: 5px solid #342c2c;
+}
+.menuTop p{
+  max-width: 500px;
+  padding: 50px 0px 0px 15px;
+}
+
+.menuTop img{
+    position: absolute;
+    left:40%;
+    top: 30px;
+    filter: invert(100%);
+    width: 60%;
+    height: 80px;
+}
+
+
+/*Section des articles*/
+.article{
+  background-color: #2a2a2a;
+  min-height: 780px;
+  width: 100%;
+}
+
+#centrage{
+  position: relative;
+  display: flex;
+  overflow: auto;
+  background-color:  #6c4d4d;
+  margin-left: 70px;
+  margin-right: 70px;
+  padding-top: 20px;
+  min-height: 780px;
+  min-width: 85%;
+  text-align: center;
+}
+
+#centrage img{
+  height: 400px;
+  width: 350px;
+}
+
+#centrage p{
+  height: 30px;
+}
+
+
+#premierePage{
+  max-height: 430px;
+  margin-left: 20px;
+  width: 350px;
+  background-color: white;
+}
+
+#premierePage img{
+  height: 400px;
+  width: 350px;
+}
+
+
+#deuxiemePage{
+  max-height: 430px;
+  width: 350px;
+  background-color: black;
+  color: white;
+  margin-left: 20px;
+}
+
+#troisiemePage{
+  max-height: 430px;
+  width: 350px;
+  background-color:  #b2b2b2;
+  color:  #4e4e4e;
+  margin-left: 20px;
+}
