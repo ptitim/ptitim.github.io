@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+nav{
+    background-image: linear-gradient(to bottom,white, silver);
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+nav a{
+    margin: 0px 10px;
+    padding: 5px 5px;
+    color : black;
+    font-family: 'Covered By Your Grace',serif;
+    transition: all .5s ease-in;
+}
+
+nav a:hover{
+    box-shadow: 2px 0px 2px orange, -2px 0px 2px orange;
+    background-color: orange;
+}
+
+body{
+    height: 100%;
+}
+
+#disable{
+    background-color:  #ffb200;
+}
+
+.container{
+    padding-top: 50px;
+    background-color:  #0C1222;
+    width: 100%;
+    height: 110%;
+    text-align: center;
+}
+
+.presentation{
+    text-align: left;
+    margin: auto;
+    width: 45em;
+    padding-bottom: 70px;
+}
+
+.presentation ol{
+    margin-left: 2em;
+}
+
+.star{
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0 0 10px white;
+    animation-name: stari;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    height: 4px;
+    width: 4px;
+    position: absolute;
+}
+.star2{
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0 0 10px white;
+    animation-name: stari;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    height: 4px;
+    width: 4px;
+    position: absolute;
+}
+
+.star3{
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0 0 10px white;
+    animation-name: stari;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    height: 4px;
+    width: 4px;
+    position: absolute;
+}
+.star4{
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0 0 10px white;
+    animation-name: stari;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    height: 4px;
+    width: 4px;
+    position: absolute;
+
+}
+@keyframes stari {
+    from{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+img{
+  height: 400px;
+  width: 800px;
+}
+
+li , p{
+    color: white;
+    font-family: 'Montserrat',serif;
+}
