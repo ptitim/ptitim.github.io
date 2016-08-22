@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>air Bnb</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--   -->
+  </head>
+
+  <body>
+    <div class="principale">
+      <!-- la classe haut desend jusqu'au formulaire-->
+      <div class="haut">
+        <!--image et video de fond -->
+        <video loop muted autoplay src="data/videobg.mp4"></video>
+        <div class="header">
+          <img src="data/logo.png" alt="logo" id="logo"/>
+          <!--menu haut guche-->
+          <section id="menu">
+            <a href="" id="hote">Devenez hote</a>
+            <a href="#" class="autres">Aide</a>
+            <a href="#" class="autres">Inscripion</a>
+            <a href="#" class="autres">Connexion</a>
+          </section>
+        </div>
+
+        <div class="txthaut">
+          <p>Vivez la-bas</p>
+          <p>Réservez des logements auprès d'hôtes locaux dans plus de 191 pays et vivez là-bas, comme chez vous.</p>
+        </div>
+        <span id="img-lecture">
+          <img src="data/playbutton1.png" alt="bouton de lecture"/>
+        </span>
+
+        <!--Formulaire de recherche -->
+        <div class="recherche">
+          <form action="index.html" method="post">
+            <div class="sousRecherche">
+                <input type="text" name="where" value="ou?">
+                <div id="global">
+                  <input type="date" name="depart" value="depart">
+                  <span id="fleche">&rarr;</span>
+                  <input type="date" name="arrivée" value="arriver">
+                </div>
+                <select>
+                  <option value="un">1 Passager</option>
+                  <option value="deux">2 Passager</option>
+                  <option value="trois">3 Passager</option>
+                  <option value="quatre">4 Passager</option>
+                  <option value="cinq">5 Passager</option>
+                  <option value="six">6 Passager</option>
+                <input type="button" name="name" value="rechercher" id="btn">
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--fin de la classe haut-->
+
+        <div class="article">
+          <div id="prmArticle">
+            <img src="data/airbnb-choose-from-thousands-of-unique-accommodations-be69e15f08973ac944dc10934b293aab.jpg" alt="voyages"/>
+              <section>
+                <p>Ouvrez la porte à un voyageur et à une nouvelle vie.</p>
+                <p>Gagnez de l'argent en accueillant des voyageurs.</p>
+                <input type="button" value="Estimer mes revenus"></input>
+              </section>
+            </div>
+
+            <div class="separation">
+            </div>
+
+            <div class="sep3emePartie">
+              <p>Juste pour le week-end</p>
+              <p>Découvrez de nouveaux logements incroyables près de chez vous.</p>
+            </div>
+
+            <div class="exempleDeDestination">
+              <span>
+                <!--<img src="data/airbnb-choose-from-thousands-of-unique-accommodations-be69e15f08973ac944dc10934b293aab.jpg" alt="voyages" />-->
+                <p id="premierePhoto">
+                  Lilles
+                </p>
+              </span>
+              <span>
+                <!--<img src="data/airbnb-choose-from-thousands-of-unique-accommodations-be69e15f08973ac944dc10934b293aab.jpg" alt="voyages" />-->
+                <p id="deuxiemePhoto">
+                  Bruxelles
+                </p>
+              </span>
+              <span>
+                <p id="troisiemePhoto">
+                  Londres
+                </p>
+                <!--<img src="data/airbnb-choose-from-thousands-of-unique-accommodations-be69e15f08973ac944dc10934b293aab.jpg" alt="voyages" />-->
+              </span>
+            </div>
+
+            <section id="btnDesination">
+              <input type="button" name="name" value="voir toutes les destinations">
+            </section>
+        </div>
+      </div>
+  </body>
+
+</html>
