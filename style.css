@@ -13,7 +13,7 @@ body{
   font-size: 30px;
   width: 100%;
   height: 50px;
-  background-color:  #24554E;
+  background-color: white;
   border-bottom: 5px solid #342c2c;
 }
 .menuTop p{
@@ -66,7 +66,6 @@ body{
     position: absolute;
     left:40%;
     top: 0px;
-    filter: invert(100%);
     width: 60%;
     height: 80px;
 }
@@ -75,7 +74,7 @@ body{
 /*Section des articles*/
 .article{
   z-index: 1;
-  background-color: #17554C;
+  background-color: lightgrey;
   height: 100%;
   width: 100%;
 }
@@ -84,7 +83,7 @@ body{
   position: relative;
   display: flex;
   overflow: auto;
-  background-color:  #552917;
+  background-color:  white;
   margin-left: 70px;
   margin-right: 70px;
   padding-top: 30px;
@@ -92,7 +91,7 @@ body{
   min-width: 85%;
   text-align: center;
   border: 1px inset grey;
-  box-shadow: 5px 5px 5px white, -5px 5px 5px white;
+  /*box-shadow: 5px 5px 5px white, -5px 5px 5px white;*/
   border-radius: 15px;
 }
 
@@ -100,15 +99,17 @@ body{
   height: 30px;
 }
 
-
 #premierePage{
+  padding: 5px;
+  background-color: black;
   z-index: 3;
   max-height: 430px;
   margin-left: 30px;
   width: 350px;
-  background-color: white;
+  color: white;
+  /*background-color: white;*/
   transition: all 0.5s ease-in-out;
-  border-radius: 5px;
+  /*border: 2px solid black;*/
 }
 
 #premierePage:hover {
@@ -129,7 +130,6 @@ body{
   color: white;
   margin-left: 20px;
   transition: all 0.5s ease-in-out;
-  border-radius: 5px;
 }
 
 #deuxiemePage:hover{
@@ -138,13 +138,12 @@ body{
 
 #troisiemePage{
   z-index: 3;
-  max-height: 430px;
+  height: 430px;
   width: 350px;
-  background-color:  #b2b2b2;
+  background-color: #b2b2b2;
   color:  #4e4e4e;
   margin-left: 20px;
   transition: all 0.5s ease-in-out;
-  border-radius: 5px;
 }
 
 #troisiemePage:hover{
@@ -152,9 +151,12 @@ body{
 }
 
 .shadow{
-  /*box-shadow: 4px 0px 5px black, -4px -0px 5px black, 0px -4px 5px black, -0px -4px 5px black;*/
+  box-shadow: 4px 0px 0px black, -4px -0px 0px black, 0px -4px 0px black, -0px -4px 0px black;
 }
 
 .shadow:hover{
-  box-shadow: 4px 0px 5px skyblue, -4px -0px 5px skyblue, 0px -4px 5px skyblue, -0px -4px 5px skyblue;
+  box-shadow: 4px 0px 5px black, -4px -0px 5px black, 0px -4px 5px black, -0px -4px 5px black;
+}
+
+img{
 }
