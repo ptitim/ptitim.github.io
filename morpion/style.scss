@@ -1,6 +1,6 @@
 $height-titre : 15vh;
 $height-jeu : 100vh - $height-titre;
-$case : 20vh;
+$caseh : 20vh; $casew: 20vw;//taille des case en affichage portrait et paysages
 $color : black;
 $background-color : silver;
 
@@ -8,6 +8,7 @@ $background-color : silver;
   margin: 0;
   padding: 0;
 }
+
 #titre{
     width: 100vw;
     height: 15vh;
@@ -31,8 +32,6 @@ $background-color : silver;
         border: 1px solid red;
         td{
             border: 1px solid black;
-            height:$case;
-            width: $case;
         }
     }
 }
@@ -46,8 +45,6 @@ $background-color : silver;
 }
 
 #player{
-    height: $case;
-    width: $case;
     border-radius: 50% 50%;
     position: relative;
     transform: scale(1.3);
@@ -76,12 +73,25 @@ $background-color : silver;
 }
 
 #ia{
-    height: $case;
-    width: $case;
     margin: auto;
     height: 75%;
     width: 75%;
     border: 2px solid $color;
     border-radius: 100%;
     background-color: $background-color;
+}
+
+@media (orientation: landscape) {
+    #ia, #player, td{
+      height: $caseh;
+      width: $caseh;
+    }
+}
+
+@media (orientation: portrait){
+  #ia, #player, td{
+    height: $casew;
+    width: $casew;
+  }
+
 }
