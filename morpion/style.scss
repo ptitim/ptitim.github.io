@@ -1,0 +1,87 @@
+$height-titre : 15vh;
+$height-jeu : 100vh - $height-titre;
+$case : 20vh;
+$color : black;
+$background-color : silver;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+#titre{
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    p{
+      font-family: 'Denk One', sans-serif;
+      font-size: 200%;
+    }
+}
+#qui{
+    height: 5vh;
+}
+
+#jeu{
+    width: 100vw;
+    background-color: $background-color;
+    display: flex;
+    justify-content: center;
+    table{
+        border: 1px solid red;
+        td{
+            border: 1px solid black;
+            height:$case;
+            width: $case;
+        }
+    }
+}
+
+.score{
+    margin: $height-jeu/2-20 10vw;
+}
+
+.forme{
+    display: none;
+}
+
+#player{
+    height: $case;
+    width: $case;
+    border-radius: 50% 50%;
+    position: relative;
+    transform: scale(1.3);
+    &::before{
+        background: $color;
+        position: absolute;
+        display:block;
+        content:'';
+        width: 70%;
+        height: 6%;
+        top: 47%;
+        left: 15%;
+        transform: rotate(45deg);
+    }
+    &::after{
+        background: $color;
+        position: absolute;
+        display:block;
+        content:'';
+        width: 6%;
+        height: 70%;
+        left: 47%;
+        top: 15%;
+        transform: rotate(45deg);
+    }
+}
+
+#ia{
+    height: $case;
+    width: $case;
+    margin: auto;
+    height: 75%;
+    width: 75%;
+    border: 2px solid $color;
+    border-radius: 100%;
+    background-color: $background-color;
+}
