@@ -7,6 +7,7 @@ $background-color : silver;
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 #titre{
@@ -30,6 +31,7 @@ $background-color : silver;
     justify-content: center;
     table{
         border: 1px solid red;
+        min-height: 100%;
         td{
             border: 1px solid black;
         }
@@ -37,7 +39,8 @@ $background-color : silver;
 }
 
 .score{
-    margin: $height-jeu/2-20 10vw;
+    margin: $height-jeu/2-20 5vw;
+    max-width: 5vw;
 }
 
 .forme{
@@ -74,24 +77,46 @@ $background-color : silver;
 
 #ia{
     margin: auto;
-    height: 75%;
-    width: 75%;
+    padding: 5px;
+    height: 70%;
+    width: 70%;
     border: 2px solid $color;
     border-radius: 100%;
     background-color: $background-color;
+
 }
 
 @media (orientation: landscape) {
-    #ia, #player, td{
+    td, .case{
       height: $caseh;
       width: $caseh;
+    }
+    .plateau{
+      width: 4*$caseh;
+    }
+    #player{
+      height: $caseh - 2;
+      width: $caseh - 2;
     }
 }
 
 @media (orientation: portrait){
-  #ia, #player, td{
+  td, .case{
     height: $casew;
     width: $casew;
   }
+  .plateau{
+    width: 4*$casew;
+  }
+  #player{
+    height: $caseh - 2;
+    width: $caseh - 2;
+  }
 
+}
+@media (max-width:400px){
+    td{
+      min-width: 50px;
+      min-height: 50px;
+    }
 }
