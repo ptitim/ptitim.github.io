@@ -48,7 +48,7 @@ body{
 }
 
 .horloge{
-  transform-origin: 5vw 10vh;
+  transform-origin: 5vw 1vh;
   position: absolute;
   top: 0;
 }
@@ -119,6 +119,7 @@ body{
 }
 
 input{
+    z-index: 5;
     background: none;
     background-image: url("data/reload.png");
     background-color: none;

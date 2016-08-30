@@ -30,7 +30,7 @@ body {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
 
 .horloge {
-  transform-origin: 5vw 10vh;
+  transform-origin: 5vw 1vh;
   position: absolute;
   top: 0; }
 
@@ -87,6 +87,7 @@ body {
     cursor: crosshair; }
 
 input {
+  z-index: 5;
   background: none;
   background-image: url("data/reload.png");
   background-color: none;
