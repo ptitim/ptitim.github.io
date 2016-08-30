@@ -27,7 +27,7 @@
   }
 }
 
-@media (orientation: landscape)(max-width:400px) {
+@media (orientation: landscape) and (max-width:600px) {
   .horloge{
     transform: scale(.2);
   }
@@ -128,5 +128,4 @@ input{
   background: -moz-linear-gradient(-45deg, rgb(214,214,214) 0%, rgb(255,255,255) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, rgb(214,214,214) 0%,rgb(255,255,255) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, rgb(214,214,214) 0%,rgb(255,255,255) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
