@@ -17,12 +17,6 @@
 
   .mapMonde {
     top: 100vh; } }
-@media (orientation: landscape) {
-  .horloge {
-    transform: scale(0.1); }
-
-  .mapMonde {
-    transform: scale(0.3); } }
 body {
   height: 100vh; }
 
