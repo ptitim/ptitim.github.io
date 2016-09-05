@@ -140,13 +140,11 @@ function hard(plateau, tab){
     return e;
 }
 
-function extreme(plateau plateauIa, tab){
-    var e;
-    if(plateau[1][1].value == PLAYER && indexnul == 1){
-        if(plateau[0][0] != PLAYER && indexnul == 1 ){//indexnul ici sert a verifier que ces la premiere action de l'ia
-              e = plateau[0][0];
-              return e;
-        }
-    }
-
-}
+// function extreme(plateau plateauIa, tab){
+//     var e;
+//     if(plateau[1][1].value == PLAYER && indexnul == 1){//indexnul ici sert a verifier que ces la premiere action de l'ia
+//         e = plateau[0][0];
+//         return e;
+//     }
+//
+// }
