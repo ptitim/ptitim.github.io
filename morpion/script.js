@@ -3,6 +3,9 @@ function include(fileName){
 }
 include("difIa.js");
 
+//les case du tableau( plateau) contienent la valeur jouer
+//stocker en value dans les element html
+//0 represente non jouez
 const PLAYER = 1;
 const IA = 2;
 
@@ -11,6 +14,19 @@ const MO = "moyen";
 const DIF = "difficile";
 
 
+var difficulter;//initialiser dans initbutton
+var nul = []; //contient les valeur jouez, permet le reset si toute les case on etait jouer
+var indexnul = 0;//index pour le tableau nul, sert aussi de compteur
+var elementJouer = [];//tableau des element html jouez
+var score = 0;
+var scoreIa = 0;
+var gagnant = 0;//identifiant du gagnant (1 = player)(2 = IA) (0= personne);
+var plateauIa;//contient uniquement les case jouable par l'ia
+var plateau = initTab();//contient les element (td) du plateau de jeu
+
+//variables pour le mode deux joueur
+var qui = PLAYER;
+var deuxjoueur = false;
 //click du joueur
 function playerPlay(event){
   var elementHTML = event.target;
@@ -31,7 +47,7 @@ function playerPlay(event){
   }else{
     setCase(PLAYER, elementHTML);//mise a jour du plateau avec la valuer du joueur
   }
-  if(genereVerif()){
+  if(genereVerif()){//verifie l'etat
     return;
   }else if (nul.indexOf(0) == -1) {
     setTimeout(reset, 500);
@@ -86,7 +102,7 @@ function choixIa(){
     }
     return false;
 }
-
+//reactivation des bouton exepter la=e niveaux choisie
 function choixDifficulter(e){
     var bouton = document.getElementsByTagName('input');
     for (var i = 0; i < bouton.length; i++) {
@@ -125,17 +141,21 @@ function genereVerif(){
   return false;
 }
 
+//affichage score joueur 1
 function afgScore(){
   var e = document.getElementById('afgScore');
   score++;
   e.innerHTML = score;
 }
+// affichage score ia (ou joueur 2)
 function afgIa(){
   var e = document.getElementById('afgIa');
   scoreIa++;
   e.innerHTML = scoreIa;
 }
 
+//fonctionne avec le tabia contenant toute les possibiliter de victoire
+//verifie ligne par ligne (colonne et diagonal)
 function verif(tab){
   if(tab[0].value == tab[1].value && tab[1].value == tab[2].value && tab[0].value){
     gagnant = tab[0].value;
@@ -170,21 +190,11 @@ function reset(){
   return true;
 }
 
-var difficulter;//initialiser dans initbutton
-var nul = []; //contient les valeur jouez, permet le reset si toute les case on eter jouer
-var indexnul = 0;//index pour le tableau nul
-var elementJouer = [];//tableau des element html jouez
-var score = 0;
-var scoreIa = 0;
-var gagnant = 0;//identifiant du gagnant (1 = player)(2 = IA) (0= personne);
-var plateauIa;
-var plateau = initTab();
-
-//variables pour le mode deux joueur
-var qui = PLAYER;
-var deuxjoueur = false;
 
 //generation des ligne pour la verification et pour l'"ia"
+//elle contiennent les element html du plateau de jeu
+//facilite la verification de: si le joueur peut gagner
+// ou si l'ia peut gagner
 var ligne1 = [plateau[0][0],plateau[0][1],plateau[0][2]];
 var ligne2 = [plateau[1][0],plateau[1][1],plateau[1][2]];
 var ligne3 = [plateau[2][0],plateau[2][1],plateau[2][2]];
@@ -196,7 +206,7 @@ var colonne3 = [plateau[0][2],plateau[1][2],plateau[2][2]];
 var diag1 = [plateau[0][0], plateau[1][1], plateau[2][2]];
 var diag2 = [plateau[0][2], plateau[1][1], plateau[2][0]];
 
-var tabIa =[ligne1,ligne2,ligne3,colonne1,colonne2,colonne3,diag1,diag2];
+  var tabIa =[ligne1,ligne2,ligne3,colonne1,colonne2,colonne3,diag1,diag2];
 
 //initialisation des bouton
 function initBouton(){
@@ -214,6 +224,7 @@ function initBouton(){
 };
 initBouton();
 
+// reset les tableau, rempli les plateau avec les element html
 function initTab(){
   var tab = [];
   var tableHTML = document.getElementsByClassName('case');
