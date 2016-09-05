@@ -10,6 +10,7 @@
     transform: scale(0.6); }
 
   .mapMonde {
+    margin-right: 2vw;
     bottom: 0; } }
 @media (max-width: 800px) and (min-width: 400px) {
   .horloge {
@@ -64,7 +65,8 @@ body {
 
 .mapMonde {
   position: absolute;
-  right: 0; }
+  right: 0;
+  margin-top: 40vh; }
   .mapMonde span {
     position: absolute; }
   .mapMonde #origin {
@@ -100,5 +102,10 @@ input {
   transition: all .5s linear; }
   input:hover {
     transform: rotate(-360deg); }
+
+.calendrier {
+  position: absolute;
+  top: 2vh;
+  right: 5vw; }
 
 /*# sourceMappingURL=style.css.map */

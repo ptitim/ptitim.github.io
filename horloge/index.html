@@ -19,9 +19,12 @@
               <img src="data/baguette.png" alt="une baguette" id="baguette"/>
           </div>
         </div>
+        <div class="calendrier">
+            <p id="test"></p>
+        </div>
         <div class="mapMonde">
           <img src="data/timezone.png" alt="map monde" id="map" onclick="setPosition()"/>
-          <img src="data/arrowtimezone.png" alt="pointer" id="pointer" onmousedown="test(this)" onmouseup="testno(this)"/>
+          <img src="data/arrowtimezone.png" alt="pointer" id="pointer" onmousedown="test(this)" onmouseup="testno(this)" draggable="true"/>
           <span id="origin"></span>
           <span id="fin"></span>
         </div>

@@ -52,20 +52,19 @@ function init(){
   var e = document.getElementById('map');
   e.parentElement.addEventListener("mousemove",bouger);
   window.addEventListener("keypress",deplacement);
+
+  week();
 }
 
 function secondes(){
   seconde++;
-  console.log(seconde);
   rotationne(sec,seconde,RATIOS);
 
   if(seconde >59){
     // rotationne(sec,seconde,RATIOS);
     // seconde++;
-    console.log("rotate");
     rotationne(sec, seconde,RATIOS);
     setTimeout(function(){sec.style.transition = "all 0s linear"},100);
-    console.log(seconde);
     seconde = 0;
     setTimeout(function(){rotationne(sec, seconde,RATIOS)},450);
     minute++;
@@ -104,33 +103,45 @@ function setPosition(reset){
 
 function heureMonde(minu){
   //mise a l'heure la position selon la position de la souris sur la map
-  heure = Math.ceil(hourZero + ((minu/finMap)*24));
+  // heure = Math.ceil(hourZero + ((minu/finMap)*24));
+  heure = hourZero + ((minu/finMap)*24);
+  heure.toFixed(4);
   rotationne(min,minute,RATIOS);
   rotationne(heur, heure, RATIOH);
 };
 
 
 
-//fonciton de drag du pointer
-function test(e){
-    console.log("click");
-    e.addEventListener("mousemove",truc);
-    window.addEventListener("mouseup",testno);
-    // window.addEventListener("mouseup",setPosition);
-};
+//fonction de drag du pointer
+// function test(elie){
+//     elie.style.pointerEvents = "none";
+//     console.log("click");
+//     var test = document.getElementsByClassName('mapMonde');
+//     test = test[0];
+//     test.addEventListener("mousemove",truc);
+//     window.addEventListener("mouseup",testno);
+//     // window.addEventListener("mouseup",setPosition);
+// };
+//
+// function testno(){
+//     console.log("declick");
+//     var e = document.getElementById('pointer');
+//     var test = document.getElementsByClassName('mapMonde');
+//     test = test[0];
+//     test.removeEventListener("mousemove",truc);
+//     e.style.pointerEvents = "all";
+// };
 
-function testno(){
-    console.log("declick");
-    var e = document.getElementById('pointer');
-    e.removeEventListener("mousemove",truc);
-};
-
-function truc(event){
-    var e = document.getElementById('pointer').parentElement;
-    var placement = event.clientX;///finMap;
-    console.log(placement);
-    // e.style.left = placement.toString()+"%";
-};
+// function truc(event){
+//     var e = document.getElementById('pointer');
+//     var placement = event.layerX;///finMap;
+//     placement = hourZero + ((placement/finMap)*100);
+//     placement = placement - 5.5;
+//     console.log(placement);
+//     e.style.left = placement.toString()+"%";
+//     var h = (placement/100)*24;
+//     rotationne(heur,h,RATIOH);
+// };
 
 //deplacement du pointer(et de l'heure) avec le clavier
 function deplacement(event){
@@ -156,4 +167,9 @@ function deplacement(event){
     rotationne(heur,heure,RATIOH);
 }
 
+function week(){
+  var ele = document.getElementById('test');
+  var dat = new Date();
+  test.innerText = dat.toDateString();
+}
 setInterval(secondes,1000);

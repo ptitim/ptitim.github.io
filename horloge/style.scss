@@ -11,6 +11,7 @@
       transform: scale(.6);
     }
     .mapMonde{
+      margin-right: 2vw;
       bottom: 0;
     }
 
@@ -79,6 +80,7 @@ body{
 .mapMonde{
   position: absolute;
   right: 0;
+  margin-top: 40vh;
   span{
       position: absolute;
   }
@@ -123,4 +125,10 @@ input{
     &:hover{
       transform: rotate(-360deg);
     }
+}
+
+.calendrier{
+    position: absolute;
+    top: 2vh;
+    right: 5vw;
 }
