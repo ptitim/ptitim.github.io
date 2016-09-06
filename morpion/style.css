@@ -67,6 +67,9 @@
   border-radius: 100%;
   background-color: silver; }
 
+#faute {
+  display: none; }
+
 @media (orientation: landscape) {
   td, .case {
     height: 20vh;
@@ -80,11 +83,11 @@
     width: 18vh; } }
 @media (orientation: portrait) {
   td, .case {
-    height: 20vw;
-    width: 20vw; }
+    height: 15vmax;
+    width: 15vmax; }
 
   .plateau {
-    width: 80vw; }
+    width: 60vmax; }
 
   #player {
     height: 18vh;

@@ -66,7 +66,6 @@ function playerPlay(event){
 function setCase(who ,ele){
 
   if(ele){ //verifies is the html element exist
-    console.log(ele);
     ele.removeEventListener("click",playerPlay);//remove the click
     plateauIa = majTab(plateauIa, ele);//delete where the player has played
     nul[indexnul] = who;//list of plays (player and ai)
@@ -119,6 +118,11 @@ function choixDifficulter(e){
         difficulter = e.value;
         deuxjoueur = false;
         document.getElementById('qui').innerHTML = "";
+        var faute = document.getElementById('faute');
+        if(e.value == "Sang daifod"){
+          faute.style.display = "inline";
+        }
+        setTimeout(function(){faute.style.display = "none";},3000);
     }else{
         deuxjoueur = true;
         qui = 1;

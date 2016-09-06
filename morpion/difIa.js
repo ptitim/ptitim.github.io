@@ -3,7 +3,6 @@
 function easy(plateau){
     var x = Math.floor(Math.random()*plateau.length);
     var e = plateau[x];
-    console.log("ia joue au hasard");
     return e;
 };
 
@@ -26,7 +25,6 @@ function medium (plateau, tab){
     if(compteur == 2){
       intel = true;
       if(e){
-          console.log("ia joue contre le joueur medium");
           return e;
       }
     }
@@ -34,7 +32,6 @@ function medium (plateau, tab){
   if(!intel){
     var x = Math.floor(Math.random()*plateau.length);
     var e = plateau[x];
-    console.log("ia joue au hasard medium");
     return e;
   }
 };
@@ -58,9 +55,7 @@ function hard(plateau, tab){
     }
     if(compteur == 2){
       if(e && e.value != PLAYER){
-        console.log("win ? " + compteur);
         intel = true;
-          console.log("ia joue pour gagnez");
           return e;
       }
     }
@@ -76,11 +71,9 @@ function hard(plateau, tab){
           e = tab[i][j];
       }
     }
-    console.log(compteur);
     if(compteur == 2){
       intel = true;
       if(e){
-          console.log("ia joue contre le joueur difficile");
           return e;
       }
     }
@@ -136,7 +129,6 @@ function hard(plateau, tab){
   }
     var x = Math.floor(Math.random()*plateau.length);
     var e = plateau[x];
-    console.log("ia joue au hasard difficile");
     return e;
 }
 
@@ -182,9 +174,9 @@ function extreme(plateau, plateauIa, tab){
           e = plateau[2][2];
           return e;
       }
-      //X--   //---   //---
-      //-0-   //X0-   //X0-
-      //-X-   //-X-   //--X
+      //---   //X--  //---
+      //X0-   //-0-  //X0-
+      //-X-   //-X-  //--X
       else if((plateau[2][1].value == PLAYER && (plateau[0][0].value == PLAYER || plateau[0][1].value == PLAYER))
             || plateau[1][0].value == PLAYER && plateau[2][2].value == PLAYER){
           e = plateau[2][0];
@@ -214,9 +206,7 @@ function extreme(plateau, plateauIa, tab){
     }
     if(compteur == 2){
       if(e && e.value != PLAYER){
-        console.log("win ? " + compteur);
         intel = true;
-          console.log("ia joue pour gagnez");
           return e;
       }
     }
@@ -232,17 +222,16 @@ function extreme(plateau, plateauIa, tab){
           e = tab[i][j];
       }
     }
-    console.log(compteur);
     if(compteur == 2){
       intel = true;
       if(e){
-          console.log("ia joue contre le joueur difficile");
           return e;
       }
     }
   }
+
+  //en dernier recours l'ia joue au hasard
   var x = Math.floor(Math.random()*plateauIa.length);
   var e = plateauIa[x];
-  console.log("ia joue au hasard difficile");
   return e;
 }

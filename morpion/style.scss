@@ -1,6 +1,6 @@
 $height-titre : 15vh;
 $height-jeu : 100vh - $height-titre;
-$caseh : 20vh; $casew: 20vw;//taille des case en affichage portrait et paysages
+$caseh : 20vh; $casew: 15vmax;//taille des case en affichage portrait et paysages
 $color : black;
 $background-color : silver;
 
@@ -84,6 +84,9 @@ $background-color : silver;
     border-radius: 100%;
     background-color: $background-color;
 
+}
+#faute{
+    display: none;
 }
 
 @media (orientation: landscape) {
