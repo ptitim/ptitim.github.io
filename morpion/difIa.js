@@ -19,7 +19,7 @@ function medium (plateau, tab){
       if(tab[i][j].value == PLAYER){
           compteur++;
       }
-      if(tabIa[i][j].value == 0){
+      if(tab[i][j].value == 0){
           e = tab[i][j];
       }
     }
@@ -140,11 +140,109 @@ function hard(plateau, tab){
     return e;
 }
 
-// function extreme(plateau plateauIa, tab){
-//     var e;
-//     if(plateau[1][1].value == PLAYER && indexnul == 1){//indexnul ici sert a verifier que ces la premiere action de l'ia
-//         e = plateau[0][0];
-//         return e;
-//     }
-//
-// }
+function extreme(plateau, plateauIa, tab){
+    var e;//representent la case jouez
+    //gestion du cas central (joueur joue au centre au premier coup)
+    if(plateau[1][1].value == PLAYER){
+      console.log("bonjour");
+        if(plateau[1][1].value == PLAYER && indexnul == 1){//indexnul ici sert a verifier que ces la premiere action de l'ia
+            e = plateau[0][0];
+            return e;
+        }
+        if(plateau[1][1].value == PLAYER && indexnul == 3 && plateau[2][2].value == PLAYER){
+            e = plateau[0][2];
+            return e;
+        }
+  }else if (indexnul == 1 && plateau[1][1] != PLAYER) {
+      e = plateau[1][1];
+      return e;
+  }
+  if(indexnul == 3){
+      //-X-   //--X   //-X-
+      //X0-   //X0-   //-0-
+      //---   //---   //X--
+      if((plateau[1][0].value == PLAYER && (plateau[0][1].value == PLAYER || plateau[0][2].value == PLAYER))
+       || plateau[2][0].value == PLAYER && plateau[0][1].value == PLAYER){
+          e = plateau[0][0];
+          return e;
+      }
+      //-X-   //-X-   //X--
+      //-0X   //-0-   //-0X
+      //---   //--X   //---
+      else if ((plateau[0][1].value == PLAYER && (plateau[2][1].value == PLAYER || plateau[1][2].value == PLAYER))
+             || plateau[0][0].value == PLAYER && plateau[1][2].value == PLAYER  ) {
+          e = plateau[0][2];
+          return e;
+      }
+      //---   //---   //--X
+      //-0X   //-0X   //-0-
+      //-X-   //X--   //-X-
+      else if ((plateau[1][2].value == PLAYER && (plateau[2][1].value == PLAYER || plateau[2][0].value == PLAYER))
+            ||  plateau[2][1].value == PLAYER && plateau[0][2].value == PLAYER) {
+          e = plateau[2][2];
+          return e;
+      }
+      //X--   //---   //---
+      //-0-   //X0-   //X0-
+      //-X-   //-X-   //--X
+      else if((plateau[2][1].value == PLAYER && (plateau[0][0].value == PLAYER || plateau[0][1].value == PLAYER))
+            || plateau[1][0].value == PLAYER && plateau[2][2].value == PLAYER){
+          e = plateau[2][0];
+          return e;
+      }
+      //--X   //X--
+      //-0-   //-0-
+      //X--   //--X
+      else if ((plateau[0][2].value == PLAYER && plateau[2][0].value == PLAYER) || (plateau[0][0].value == PLAYER && plateau[2][2].value == PLAYER)) {
+          e = plateau[0][1];
+          return e;
+      }
+  }
+  //copie de l'ia difficile a la zeubie
+  var intel = false;
+  //verifie si elle peu gagner
+  for (var i = 0; i < tab.length; i++) {
+    var compteur = 0;
+    var e = undefined;
+    for (var j = 0; j < tab[j].length; j++) {
+      if(tab[i][j].value == IA){
+          compteur++;
+      }
+      if(tabIa[i][j].value == 0){
+          e = tab[i][j];
+      }
+    }
+    if(compteur == 2){
+      if(e && e.value != PLAYER){
+        console.log("win ? " + compteur);
+        intel = true;
+          console.log("ia joue pour gagnez");
+          return e;
+      }
+    }
+  }
+  for (var i = 0; i < tab.length; i++) {
+    var compteur = 0;
+    var e = undefined;
+    for (var j = 0; j < tab[j].length; j++) {
+      if(tab[i][j].value == PLAYER){
+          compteur++;
+      }
+      if(tabIa[i][j].value == 0){
+          e = tab[i][j];
+      }
+    }
+    console.log(compteur);
+    if(compteur == 2){
+      intel = true;
+      if(e){
+          console.log("ia joue contre le joueur difficile");
+          return e;
+      }
+    }
+  }
+  var x = Math.floor(Math.random()*plateauIa.length);
+  var e = plateauIa[x];
+  console.log("ia joue au hasard difficile");
+  return e;
+}

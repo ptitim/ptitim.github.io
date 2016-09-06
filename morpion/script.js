@@ -12,7 +12,7 @@ const IA = 2;
 const FA = "facile";
 const MO = "moyen";
 const DIF = "difficile";
-
+const EX = "Sang daifod";//extreme
 
 var difficulter;//initialiser dans initbutton
 var nul = []; //contient les valeur jouez, permet le reset si toute les case on etait jouer
@@ -26,7 +26,9 @@ var plateau = initTab();//contient les element (td) du plateau de jeu
 
 //variables pour le mode deux joueur
 var qui = PLAYER;
-var deuxjoueur = false;
+var deuxjoueur = true;
+
+
 //click du joueur
 function playerPlay(event){
   var elementHTML = event.target;
@@ -64,6 +66,7 @@ function playerPlay(event){
 function setCase(who ,ele){
 
   if(ele){ //verifies is the html element exist
+    console.log(ele);
     ele.removeEventListener("click",playerPlay);//remove the click
     plateauIa = majTab(plateauIa, ele);//delete where the player has played
     nul[indexnul] = who;//list of plays (player and ai)
@@ -98,6 +101,9 @@ function choixIa(){
         return true;
     }else if (difficulter == DIF) {
         setCase(IA,hard(plateauIa,tabIa));
+        return true;
+    }else if (difficulter == EX) {
+        setCase(IA,extreme(plateau, plateauIa, tabIa));
         return true;
     }
     return false;
@@ -215,7 +221,7 @@ function initBouton(){
         bout[i].disabled = false;
         // le jeu s'initialise en difficile
         //le bouton difficile est desactiver
-        if(bout[i].value == "difficile"){
+        if(bout[i].value == "deux joueur"){
             bout[i].disabled = true;
         }
       }
