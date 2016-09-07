@@ -5,6 +5,7 @@ function rand(a){
 
 function createStar(classes, element){
     var star = document.createElement('div');
+    star.classList += 'delete ';
     star.classList += classes[rand(classes.length)];
     var windowHeight = element.innerHeight || element.clientHeight;
     var windowWidth = element.innerWidth || element.clientWidth;
@@ -26,6 +27,13 @@ function fillSky(number, classes, element){
       element.appendChild(createStar(classes, element));
     }
 };
- function init(){
-    fillSky(150, stars);
- }
+
+function empty(){
+    var allStars = document.getElementsByClassName('delete');
+    // console.log(allStars);
+    // console.log(allStars.length);
+    while(allStars.length != 0){
+      allStars[0].parentNode.removeChild(allStars[0]);
+    }
+    // console.log(allStars);
+}

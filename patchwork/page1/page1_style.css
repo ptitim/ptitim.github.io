@@ -101,7 +101,21 @@ body{
     height: 4px;
     width: 4px;
     position: absolute;
+}
 
+.skyButton{
+    position: absolute;
+    top: 60px;
+    left: 20px;
+}
+input{
+    border: none;
+    color: skyblue;
+    background: rgba(0, 0, 0, 0.4);;
+}
+input:hover{
+    background-color: #0C1222;
+    cursor: none;
 }
 @keyframes stari {
     from{
