@@ -96,5 +96,12 @@
   td {
     min-width: 50px;
     min-height: 50px; } }
+.putin {
+  overflow: hidden;
+  display: none; }
+
+.vlad {
+  height: 100%;
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

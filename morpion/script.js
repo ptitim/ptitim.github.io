@@ -273,17 +273,19 @@ function initTab(){
 //recoit un tableua de trois elment html
 //colore pour montrer la ligne gagante
 function feedBack(tab, colorChoose){
+    var perdu = "#A60000";
+    var gagnez = "#008500";
     for (var i = 0; i < tab.length; i++) {
       if(verif(tab[i])){
           console.log(tab[i]);
           var a = i;
           for (var j = 0; j < tab[a].length; j++) {
             if(colorChoose == PLAYER)
-              tab[a][j].style.background = "green";
+              tab[a][j].style.background = gagnez;
             else if(colorChoose == IA)
-              tab[a][j].style.background = "red";
+              tab[a][j].style.background = perdu;
             else
-              tab[a][j].style.background = "green";
+              tab[a][j].style.background = gagnez;
           }
           setTimeout(function(){test(tab[a])}, 1000);
       }
