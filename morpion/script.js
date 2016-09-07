@@ -50,6 +50,7 @@ function playerPlay(event){
     setCase(PLAYER, elementHTML);//mise a jour du plateau avec la valuer du joueur
   }
   if(genereVerif()){//verifie l'etat
+    feedBack(tabIa, PLAYER);
     return;
   }else if (nul.indexOf(0) == -1) {
     setTimeout(reset, 500);
@@ -57,6 +58,7 @@ function playerPlay(event){
   if(!deuxjoueur)
     choixIa();
   if(genereVerif()){
+    feedBack(tabIa, IA);
     return;
   }else if (nul.indexOf(0) == -1) {
     setTimeout(reset, 500);
@@ -119,7 +121,7 @@ function choixDifficulter(e){
         deuxjoueur = false;
         document.getElementById('qui').innerHTML = "";
         var faute = document.getElementById('faute');
-        if(e.value == "Sang daifod"){
+        if(e.value == EX){
           faute.style.display = "inline";
         }
         setTimeout(function(){faute.style.display = "none";},3000);
@@ -130,6 +132,7 @@ function choixDifficulter(e){
     }
     return e.value;
 }
+
 //verification des ligne rempli
 function genereVerif(){
 
@@ -139,12 +142,19 @@ function genereVerif(){
     if(gagnant == PLAYER){
       e.innerHTML = "YOU";
       afgScore();
-      setTimeout(reset, 500);
+      setTimeout(reset, 1000);
       return true;
     }else if(gagnant == IA) {
-      e.innerHTML = "THE RANDOM THING";
+      if(difficulter == EX){
+          e.innerText = "the unbeatable";
+      }else if (deuxjoueur) {
+          e.innerText = "joueur 2";
+      }else{
+        e.innerHTML = "THE RANDOM THING";
+
+      }
       afgIa();
-      setTimeout(reset, 500);
+      setTimeout(reset, 1000);
       return true;
     }
   }
@@ -216,7 +226,7 @@ var colonne3 = [plateau[0][2],plateau[1][2],plateau[2][2]];
 var diag1 = [plateau[0][0], plateau[1][1], plateau[2][2]];
 var diag2 = [plateau[0][2], plateau[1][1], plateau[2][0]];
 
-  var tabIa =[ligne1,ligne2,ligne3,colonne1,colonne2,colonne3,diag1,diag2];
+var tabIa =[ligne1,ligne2,ligne3,colonne1,colonne2,colonne3,diag1,diag2];
 
 //initialisation des bouton
 function initBouton(){
@@ -258,4 +268,31 @@ function initTab(){
     }
   }
   return tab;
+}
+
+//recoit un tableua de trois elment html
+//colore pour montrer la ligne gagante
+function feedBack(tab, colorChoose){
+    for (var i = 0; i < tab.length; i++) {
+      if(verif(tab[i])){
+          console.log(tab[i]);
+          var a = i;
+          for (var j = 0; j < tab[a].length; j++) {
+            if(colorChoose == PLAYER)
+              tab[a][j].style.background = "green";
+            else if(colorChoose == IA)
+              tab[a][j].style.background = "red";
+            else
+              tab[a][j].style.background = "green";
+          }
+          setTimeout(function(){test(tab[a])}, 1000);
+      }
+    }
+}
+
+
+function test(tab){
+    for (var i = 0; i < tab.length; i++) {
+      tab[i].style.backgroundColor = "silver";
+    }
 }

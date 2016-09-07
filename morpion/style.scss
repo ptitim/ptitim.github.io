@@ -80,9 +80,9 @@ $background-color : silver;
     padding: 5px;
     height: 70%;
     width: 70%;
-    border: 2px solid $color;
+    border: 4px solid $color;
     border-radius: 100%;
-    background-color: $background-color;
+    background-color: rgba(0, 0, 0, 0);
 
 }
 #faute{
