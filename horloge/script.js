@@ -45,7 +45,7 @@ function init(){
   var fin = document.getElementById('fin');
   var largeur = document.body.clientWidth;
   finMap = fin.offsetLeft;//taille en px de la mapMonde
-  setPosition("45%");
+  setPosition("50%");
 
   //deplacemnt de l'heure
   var e = document.getElementById('map');
@@ -91,8 +91,12 @@ function bouger(event){
 }
 
 //deplacement du pointer
-function setPosition(){
+function setPosition(reset){
   var e = document.getElementById('pointer');
+  if(reset){
+      e.style.left = reset;
+      return true;
+  }
     e.style.left = (mouseX-14).toString()+"px";
     heureMonde(mouseX);
 }
