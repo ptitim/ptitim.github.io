@@ -86,7 +86,6 @@ body{
 /*footer*/
 footer{
   height: 20vh;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+67,000000+98&0+0,0.53+10,0.8+44 */
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.53) 10%, rgba(0,0,0,0.8) 44%, rgba(0,0,0,0.8) 67%, rgba(0,0,0,0.8) 98%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.53) 10%,rgba(0,0,0,0.8) 44%,rgba(0,0,0,0.8) 67%,rgba(0,0,0,0.8) 98%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.53) 10%,rgba(0,0,0,0.8) 44%,rgba(0,0,0,0.8) 67%,rgba(0,0,0,0.8) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -114,15 +113,3 @@ section img{
   height: 6vh;
   width: 6vh;
 }
-/*#imgGithub{
-  height: 8vh;
-  width: 8vh;
-}*/
-/*#imgTel{
-  height: 4vh;
-  width: 4vh;
-}
-#imgMail{
-  height: 4vh;
-  width: 4vh;
-}*/
