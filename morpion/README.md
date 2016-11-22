@@ -1,2 +1,0 @@
-# morpion
-tic tac toe
