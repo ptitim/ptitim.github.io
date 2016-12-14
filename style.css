@@ -107,7 +107,7 @@ footer a{
 
 footer a:hover{
   color: rgb(68, 134, 244);
-  text-shadow: 1px 1px rgb(0, 95, 254);
+  /*text-shadow: 1px 1px rgb(0, 95, 254);*/
 }
 footer a:active{
     color: rgb(97, 226, 198);
